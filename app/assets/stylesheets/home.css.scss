@@ -30,8 +30,7 @@ div.header_wrapper {
 }
 
 div.content_wrapper {
-	display:block;
-	height:100%;
+	padding:5px;
   	background-color:green;
 }
 
@@ -44,6 +43,7 @@ div.footer_wrapper {
 }
 
 div.header {
+	padding-top:10px;
 	text-align:center;
 	vertical-align:middle;
 }
@@ -53,5 +53,7 @@ div.subtitle {
 }
 
 div.footer {
-	
+	padding-top:10px;
+	text-align:center;
+	font-weight:600;
 }

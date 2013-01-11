@@ -12,6 +12,8 @@
 APP_PATH = File.expand_path('../../config/application',  __FILE__)
 require File.expand_path('../../config/boot',  __FILE__)
 require "rails/commands/server"
+
+# This section is added to merge new settings (like the port) into the rails server startup
 module Rails
   class Server
     def default_options
@@ -26,4 +28,5 @@ module Rails
     end
   end
 end
+
 require 'rails/commands'

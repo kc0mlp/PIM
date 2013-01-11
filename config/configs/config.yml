@@ -1,0 +1,24 @@
+# 
+#  config.rb
+#  PIM
+#  
+#  Created by Kael Hankins on 2013-01-10.
+#  Copyright 2013 Kael Hankins. All rights reserved.
+# 
+#  This file holds various configuration settings for PIM sorted by operation mode.
+#  Defaults will be loaded with each environment set
+#  The server must be restarted to show changes to this file.
+
+defaults: &defaults
+  site_title: "The Best Site Evar"
+
+development:
+   <<: *defaults
+
+
+test:
+   <<: *defaults
+
+
+production:
+   <<: *defaults

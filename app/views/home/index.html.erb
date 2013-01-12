@@ -2,7 +2,8 @@
 	
 	<div class="header_wrapper">
 		<div class="header"><%= APP_CONFIG.config['site_title'] %></div>
-		<div class="subtitle">Subtitle for Home Page.</div>
+		<div class="subtitle"><%= APP_CONFIG.config['site_subtitle'] %></div>
+		<%= link_to 'Blog', blog_path %>
 	</div>
 	
 	<div class="content_wrapper">
@@ -19,7 +20,11 @@
 	</div>
 	
 	<div class="footer_wrapper">
-		<div class="footer">Footer: This is a RAILS web app in progress.</div>
+		<div class="footer">
+			<%= LANGUAGE.lang['home_footer'] %>
+			<br />
+			<%= APP_CONFIG.config['global_footer'] %>
+		</div>
 	</div>	
 	
 </div>

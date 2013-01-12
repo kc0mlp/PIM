@@ -6,6 +6,7 @@
 #  Copyright 2013 Kael Hankins. All rights reserved.
 # 
 #  This file creates the APP_CONFIG module for providing configuration variables
+
 module APP_CONFIG
   def self.config
     @@config ||= {}

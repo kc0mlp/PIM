@@ -7,10 +7,13 @@
 # 
 #  This file holds various configuration settings for PIM sorted by operation mode.
 #  Defaults will be loaded with each environment set
-#  The server must be restarted to show changes to this file.
+#  The server must be restarted to show changes to this file as it is only read on startup.
 
 defaults: &defaults
   site_title: "The Best Site Evar"
+  site_subtitle: "This is the Site Subtitle, set in /config/configs/config.yml"
+  global_footer: "Copyright Kael Hankins 2013 All Rights Reserved. This RAILS Project is a work in progress."
+
 
 development:
    <<: *defaults

@@ -1,29 +1,41 @@
-<div class="wrapper">	
-	<h1>Listing posts</h1>
+<div class="page_wrapper">
 	
-	<table>
-	  <tr>
-	    <th>Name</th>
-	    <th>Title</th>
-	    <th>Content</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
+	<div class="header_wrapper">
+		<div class="header"><%= LANGUAGE.lang['blog_title'] %></div>
+		<%= link_to 'Home', home_index_path %>
+	</div>
 	
-	<% @posts.each do |post| %>
-	  <tr>
-	    <td><%= post.name %></td>
-	    <td><%= post.title %></td>
-	    <td><%= post.content %></td>
-	    <td><%= link_to 'Show', post %></td>
-	    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-	    <td><%= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-	  </tr>
-	<% end %>
-	</table>
+	<div class="content_wrapper">
+		<table>
+		  <tr>
+		    <th>Name</th>
+		    <th>Title</th>
+		    <th>Content</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		
+		<% @posts.each do |post| %>
+		  <tr>
+		    <td><%= post.name %></td>
+		    <td><%= post.title %></td>
+		    <td><%= post.content %></td>
+		    <td><%= link_to 'Show', post %></td>
+		    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+		    <td><%= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+		</table>
+		
+		<%= link_to 'New Post', new_post_path %>
+	</div>
 	
-	<br />
-	
-	<%= link_to 'New Post', new_post_path %>
+	<div class="footer_wrapper">
+		<div class="footer">
+			<%= LANGUAGE.lang['blog_footer'] %>
+			<br />
+			<%= APP_CONFIG.config['global_footer'] %>
+		</div>	
+	</div>
 </div>

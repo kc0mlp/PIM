@@ -6,4 +6,11 @@
 #  Copyright 2013 Kael Hankins. All rights reserved.
 # 
 #  This file holds the string definitions for PIM to make for easy language adaptation later.
+#  All printed, human read strings should be defined here.
+#  The server must be restarted to show changes to this file as it is only read on startup.
+
+home_footer: "Home Page Footer"
+
+blog_title: "News and Updates"
+blog_footer: "Blog Footer goes here."
 

@@ -1,6 +1,7 @@
 PIM::Application.routes.draw do
   resources :posts
 
+  get "blog" => "posts#index", :as => "blog"
 
   get "home/index"
   

@@ -8,6 +8,7 @@
    This file controls the CSS specific to the display of posts (blog).
 */
 
+/* Page formatting for floating footer and header */
 html,body {
 	height:100%; /* For the container min-height */
 	background-color:yellow;
@@ -29,7 +30,7 @@ div.header_wrapper {
   	background-color:red;
 }
 
-div.content_wrapper {
+div.posts_wrapper {
 	padding:5px;
   	background-color:green;
 }
@@ -56,4 +57,37 @@ div.footer {
 	padding-top:10px;
 	text-align:center;
 	font-weight:600;
+}
+
+/* Post formatting for individual posts */
+div.post {
+	margin:5px;
+	border-bottom:solid;
+	border-bottom-width:2px;
+}
+
+div.post_title {
+	text-align:center;
+	font-size:x-large;
+}
+
+div.post_content {
+	border-bottom:solid;
+	border-bottom-width:1px;
+}
+
+div.post_footer {
+	
+}
+
+span.post_name {
+	
+}
+
+span.post_created {
+	float:right;
+}
+
+span.post_updated {
+	float:right;
 }

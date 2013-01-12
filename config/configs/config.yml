@@ -13,7 +13,7 @@ defaults: &defaults
   site_title: "The Best Site Evar"
   site_subtitle: "This is the Site Subtitle, set in /config/configs/config.yml"
   global_footer: "Copyright Kael Hankins 2013 All Rights Reserved. This RAILS Project is a work in progress."
-
+  timezone: "Central Time (US & Canada)"
 
 development:
    <<: *defaults

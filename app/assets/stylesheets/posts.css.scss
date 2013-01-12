@@ -61,7 +61,11 @@ div.footer {
 
 /* Post formatting for individual posts */
 div.post {
-	margin:5px;
+	margin-top:25px;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-right:5px;
+	
 	border-bottom:solid;
 	border-bottom-width:2px;
 }
@@ -71,23 +75,29 @@ div.post_title {
 	font-size:x-large;
 }
 
+a.post_title {
+	color: black;
+}
+
 div.post_content {
-	border-bottom:solid;
-	border-bottom-width:1px;
+
 }
 
 div.post_footer {
-	
+	border-top:solid;
+	border-top-width:1px;
+	margin-top:10px;
 }
 
 span.post_name {
 	
 }
 
-span.post_created {
+span.post_updated {
 	float:right;
 }
 
-span.post_updated {
+span.post_created {
 	float:right;
+	padding-right:10px;
 }

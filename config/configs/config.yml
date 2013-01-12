@@ -14,6 +14,7 @@ defaults: &defaults
   site_subtitle: "This is the Site Subtitle, set in /config/configs/config.yml"
   global_footer: "Copyright Kael Hankins 2013 All Rights Reserved. This RAILS Project is a work in progress."
   timezone: "Central Time (US & Canada)"
+  date_time_format: "%a, %b. %d, %Y  %I:%M %p"
 
 development:
    <<: *defaults

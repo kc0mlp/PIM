@@ -1,20 +1,30 @@
-<p id="notice"><%= notice %></p>
+<!-- 
+      show.html.erb
+      PIM
+      
+      Created by Kael Hankins on 2013-01-12.
+      Copyright 2013 Kael Hankins. All rights reserved.
+      
+      View for posts#show
+ -->
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+<div class="post">
+	<div class="post_title"><%= @post.title %></div>
+	<div class="post_header">
+		<span class="post_name"><%= @post.name %></span>
+	</div>
+	<div class="post_content"><%= @post.content %></div>
+	<div class="post_footer">
+		
+		<% if @post.created_at != @post.updated_at %>
+			<span class="post_updated">Updated: <%= @post.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
+		<% end %>
+		<span class="post_created">Created: <%= @post.created_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
+	</div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<!--
+	For backend use later.
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %>
+-->

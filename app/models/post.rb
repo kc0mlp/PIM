@@ -1,3 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :name, :title
+  attr_accessible :content, :title
+  
+  belongs_to :pimAdmin
 end

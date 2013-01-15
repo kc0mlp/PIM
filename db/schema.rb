@@ -10,14 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109035141) do
+ActiveRecord::Schema.define(:version => 20130115044526) do
+
+  create_table "pim_admins", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "posts", :force => true do |t|
-    t.string   "name"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "pimAdmin_id"
   end
 
 end

@@ -1,7 +1,11 @@
 PIM::Application.routes.draw do
+  get "pim_admins/index" 
+
   resources :posts
+  resources :pim_admins
 
   get "blog" => "posts#index", :as => "blog"
+  get "register_admin" => "pim_admins#new", :as => "register_admin"
 
   get "home/index"
   

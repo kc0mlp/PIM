@@ -17,7 +17,7 @@
 				<div class="post_title"><%= link_to post.title, post, :class => "post_title" %></div>
 				<div class="post_content"><%= post.content %></div>
 				<div class="post_footer">
-					By: <span class="post_name"><%= post.name %></span>
+					By: <span class="post_name"><%= post.pimAdmin.username %></span>
 					<% if post.updated_at != post.created_at %>
 						<span class="post_updated">Last Updated: <%= post.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
 					<% end %>

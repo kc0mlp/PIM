@@ -58,3 +58,35 @@ div.footer {
   text-align:center;
   font-weight:600;
 }
+
+/* Individual admin formattin */
+div.pim_admin {
+	margin-top:25px;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-right:5px;
+	
+	border-bottom:solid;
+	border-bottom-width:2px;
+}
+
+div.pim_admin_firstname {
+	
+}
+
+div.pim_admin_lastname {
+	
+}
+
+div.pim_admin_username {
+	text-align:center;
+	font-size:x-large;
+}
+
+a.pim_admin_username {
+	color: black;
+}
+
+div.pim_admin_email {
+	
+}

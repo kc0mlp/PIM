@@ -1,2 +1,30 @@
-<h1>PimAdmins#index</h1>
-<p>Find me in app/views/pim_admins/index.html.erb</p>
+<!-- 
+      index.html.erb
+      PIM
+      
+      Created by Kael Hankins on 2013-01-17.
+      Copyright 2013 Kael Hankins. All rights reserved.
+      
+      Handels the view for the user admin list, this will be restricted to admins later
+ -->	
+	
+	<div id="notice"><%= notice %></div>
+	
+	<div id="pim_admins_wrapper">
+		
+		<% if (@pim_admins.empty?) %>
+			<div class="pim_admin">
+				<%= LANGUAGE.lang['sorry-no-admins'] %>
+			</div>
+		<% end %>
+		
+		<% @pim_admins.each do |pim_admin| %>	
+			<div class="pim_admin">
+				<div class="pim_admin_username"><%= link_to pim_admin.username, pim_admin, :class => "pim_admin_username" %></div>
+				<div class="pim_admin_firstname"><%= LANGUAGE.lang['first-name'] + ": " + pim_admin.first %></div>
+				<div class="pim_admin_lastname"><%= LANGUAGE.lang['last-name'] + ": " + pim_admin.last %></div>
+				<div class="pim_admin_email"><%= LANGUAGE.lang['email-address'] + ": " + pim_admin.email %></div>
+			</div>
+		<% end %>
+
+	</div>

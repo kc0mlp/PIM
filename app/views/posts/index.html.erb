@@ -11,22 +11,28 @@
 	<div id="notice"><%= notice %></div>
 	
 	<div class="posts_wrapper">
+
+		<% if (@posts.empty?) %>
+			<div class="post">
+				<%= LANGUAGE.lang['sorry-no-posts']%>
+			</div>
+		<% end %>
 		
 		<% @posts.each do |post| %>
 			<div class="post">
 				<div class="post_title"><%= link_to post.title, post, :class => "post_title" %></div>
 				<div class="post_content"><%= post.content %></div>
 				<div class="post_footer">
-					By: <span class="post_name"><%= post.pimAdmin.username %></span>
+					<span class="post_name"><%= LANGUAGE.lang['by'] + ": " + post.pimAdmin.username %></span>
 					<% if post.updated_at != post.created_at %>
-						<span class="post_updated">Last Updated: <%= post.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
+						<span class="post_updated"><%= LANGUAGE.lang['last-updated'] + ": " + post.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
 					<% end %>
-					<span class="post_created">Posted: <%= post.created_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
+					<span class="post_created"><%= LANGUAGE.lang['posted'] + ": " + post.created_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
 				</div>
 			</div>
 		<% end %>
 		
 		
-		<%= link_to 'New Post', new_post_path %> <!-- This link will be removed when a 'backend' is created, remember to remove mass assignment capacity for posts. -->
+		<%= link_to (LANGUAGE.lang['new-post']), new_post_path %> <!-- This link will be removed when a 'backend' is created, remember to remove mass assignment capacity for posts. -->
 	
 	</div>

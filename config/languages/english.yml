@@ -19,4 +19,20 @@ new-pim-admin-success: "A new PIM admin was created."
 edit-pim-admin-success: "The PIM admin was edited."
 destroy-pim-admin-success: "The PIM admin was deleted."
 
-#  Error Messages
+#Error Messages
+
+#Posts
+last-updated: "Last Updated"
+created: "Created"
+posted: "Posted"
+new-post: "New Post"
+by: "By"
+sorry-no-posts: "Sorry, there are no posts yet!"
+
+#PIM Admins
+sorry-no-admins: "Sorry, there are no PIM admins."
+first-name: "First Name"
+last-name: "Last Name"
+username: "Username"
+email: "Email"
+email-address: "Email Address"

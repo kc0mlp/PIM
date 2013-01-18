@@ -1,3 +1,12 @@
+# 
+#  posts_controller.rb
+#  PIM
+#  
+#  Created by Kael Hankins on 2013-01-17.
+#  Copyright 2013 Kael Hankins. All rights reserved.
+# 
+#  Controller for all posts including 'blog' display.
+
 class PostsController < ApplicationController
   
   layout 'posts'

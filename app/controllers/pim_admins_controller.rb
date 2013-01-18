@@ -9,7 +9,7 @@
 
 class PimAdminsController < ApplicationController
   
-  #layout 'pim_admins' Add this later
+  layout 'pim_admins'
   
   respond_to :html, :xml, :json
   

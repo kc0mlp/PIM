@@ -24,7 +24,27 @@
 				<div class="pim_admin_firstname"><%= LANGUAGE.lang['first-name'] + ": " + pim_admin.first %></div>
 				<div class="pim_admin_lastname"><%= LANGUAGE.lang['last-name'] + ": " + pim_admin.last %></div>
 				<div class="pim_admin_email"><%= LANGUAGE.lang['email-address'] + ": " + pim_admin.email %></div>
+				<div class="pim_admin_created"><%= LANGUAGE.lang['admin-since'] + ": " + pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></div>
+				<% if pim_admin.created_at != pim_admin.updated_at %>
+					<div class="pim_admin_updated"><%= LANGUAGE.lang['last-updated'] + ": " + pim_admin.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></div>
+				<% end %>
 			</div>
 		<% end %>
+		
+		<table class="pim_admin_index_table">
+			<tr>
+				<th><%= LANGUAGE.lang['username'] %>:</th>
+				<th><%= LANGUAGE.lang['email-address'] %>:</th>
+				<th><%= LANGUAGE.lang['admin-since'] %>:</th>
+			</tr>
+			
+			<% if (@pim_admins.empty?) %>
+				<tr id="pim_admin_index_noadminrow">
+					<td colspan="3"><%= LANGUAGE.lang['sorry-no-admins'] %></td>
+				</tr>
+			<% end %>
+			
+		
+		</table>
 
 	</div>

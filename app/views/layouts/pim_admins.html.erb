@@ -21,8 +21,10 @@
 	<div class="page_wrapper">
 		
 		<div class="header_wrapper">
-			<div class="header"><%= LANGUAGE.lang['blog_title'] %></div>
-			<%= link_to 'Home', home_index_path %>
+			<div class="header"><%= LANGUAGE.lang['pim-admins'] %></div>
+			<%= link_to LANGUAGE.lang['home'], home_index_path %>
+			<%= link_to LANGUAGE.lang['blog'], blog_path %>
+			<%= link_to LANGUAGE.lang['manage-admins'], pim_admins_index_path %>
 		</div>
 		
 		<div id="notice"><%= notice %></div>
@@ -32,7 +34,7 @@
 		
 		<div class="footer_wrapper">
 			<div class="footer">
-				<%= LANGUAGE.lang['blog_footer'] %>
+				<%= LANGUAGE.lang['pim-admins-footer'] %>
 				<br />
 				<%= APP_CONFIG.config['global_footer'] %>
 			</div>	

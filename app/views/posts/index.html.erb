@@ -23,7 +23,7 @@
 				<div class="post_title"><%= link_to post.title, post, :class => "post_title" %></div>
 				<div class="post_content"><%= post.content %></div>
 				<div class="post_footer">
-					<span class="post_name"><%= LANGUAGE.lang['by'] + ": " + post.pimAdmin.username %></span>
+					<span class="post_name"><%= LANGUAGE.lang['by']%>: <%= link_to post.pimAdmin.username, post.pimAdmin %></span>
 					<% if post.updated_at != post.created_at %>
 						<span class="post_updated"><%= LANGUAGE.lang['last-updated'] + ": " + post.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></span>
 					<% end %>

@@ -22,7 +22,8 @@
 		
 		<div class="header_wrapper">
 			<div class="header"><%= LANGUAGE.lang['blog_title'] %></div>
-			<%= link_to 'Home', home_index_path %>
+			<%= link_to LANGUAGE.lang['home'], home_index_path %>
+			<%= link_to LANGUAGE.lang['manage-admins'], pim_admins_index_path %>
 		</div>
 		
 		<div id="notice"><%= notice %></div>

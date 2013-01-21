@@ -12,30 +12,11 @@
 	
 	<div id="pim_admins_wrapper">
 		
-		<% if (@pim_admins.empty?) %>
-			<div class="pim_admin">
-				<%= LANGUAGE.lang['sorry-no-admins'] %>
-			</div>
-		<% end %>
-		
-		<% @pim_admins.each do |pim_admin| %>	
-			<div class="pim_admin">
-				<div class="pim_admin_username"><%= link_to pim_admin.username, pim_admin, :class => "pim_admin_username" %></div>
-				<div class="pim_admin_firstname"><%= LANGUAGE.lang['first-name'] + ": " + pim_admin.first %></div>
-				<div class="pim_admin_lastname"><%= LANGUAGE.lang['last-name'] + ": " + pim_admin.last %></div>
-				<div class="pim_admin_email"><%= LANGUAGE.lang['email-address'] + ": " + pim_admin.email %></div>
-				<div class="pim_admin_created"><%= LANGUAGE.lang['admin-since'] + ": " + pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></div>
-				<% if pim_admin.created_at != pim_admin.updated_at %>
-					<div class="pim_admin_updated"><%= LANGUAGE.lang['last-updated'] + ": " + pim_admin.updated_at.strftime(APP_CONFIG.config['date_time_format']) %></div>
-				<% end %>
-			</div>
-		<% end %>
-		
-		<table class="pim_admin_index_table">
-			<tr>
-				<th><%= LANGUAGE.lang['username'] %>:</th>
-				<th><%= LANGUAGE.lang['email-address'] %>:</th>
-				<th><%= LANGUAGE.lang['admin-since'] %>:</th>
+		<table id="pim_admin_index_table">
+			<tr id="pim_admin_index_headerrow">
+				<th><div><%= LANGUAGE.lang['username'] %>:</div></th>
+				<th><div><%= LANGUAGE.lang['email-address'] %>:</div></th>
+				<th><div><%= LANGUAGE.lang['admin-since'] %>:</div></th>
 			</tr>
 			
 			<% if (@pim_admins.empty?) %>
@@ -44,6 +25,21 @@
 				</tr>
 			<% end %>
 			
+			<% @pim_admins.each do |pim_admin| %>
+				<% if (pim_admin.id % 2) == 1 %>
+					<tr class="pim_admin_index_adminrow" onclick="goTo('<%= url_for(pim_admin) %>')">
+						<td><%= pim_admin.username %></td>
+						<td><%= pim_admin.email %></td>
+						<td><%= pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></td>
+					</tr>
+				<% else %>
+					<tr class="pim_admin_index_adminrow_alt" onclick="goTo('<%= url_for(pim_admin) %>')">
+						<td><%= pim_admin.username %></td>
+						<td><%= pim_admin.email %></td>
+						<td><%= pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></td>
+					</tr>
+				<% end %>
+		    <% end %>
 		
 		</table>
 

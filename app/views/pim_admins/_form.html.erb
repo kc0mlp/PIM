@@ -1,0 +1,33 @@
+<%= form_for (@pim_admin) do |f| %>
+	<% if @pim_admin.errors.any? %>
+		<div id="pim_admin_post_error">
+			<h2><%= pluralize(@pim_admin.errors.count, "error") %> prevented this admin from being saved:</h2>
+			
+			<ul>
+				<% @pim_admin.errors.full_messages.each do |error_msg| %>
+					<li><%= error_msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="pim_admin_form_field">
+		<%= f.label :username %><br />
+		<%= f.text_field :username %>
+	</div>
+	<div class="pim_admin_form_field">
+		<%= f.label :first %><br />
+		<%= f.text_field :first %>
+	</div>
+	<div class="pim_admin_form_field">
+		<%= f.label :last %><br />
+		<%= f.text_field :last %>
+	</div>
+	<div class="pim_admin_form_field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class="pim_admin_form_actions">
+		<%= f.submit %>
+	</div>
+<% end %>

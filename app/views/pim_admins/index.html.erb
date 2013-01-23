@@ -17,28 +17,26 @@
 				<th><div><%= LANGUAGE.lang['username'] %>:</div></th>
 				<th><div><%= LANGUAGE.lang['email-address'] %>:</div></th>
 				<th><div><%= LANGUAGE.lang['admin-since'] %>:</div></th>
+				<th><div><%= LANGUAGE.lang['actions'] %>:</div></th>
 			</tr>
 			
 			<% if (@pim_admins.empty?) %>
 				<tr id="pim_admin_index_noadminrow">
-					<td colspan="3"><%= LANGUAGE.lang['sorry-no-admins'] %></td>
+					<td colspan="4"><%= LANGUAGE.lang['sorry-no-admins'] %></td>
 				</tr>
 			<% end %>
 			
 			<% @pim_admins.each do |pim_admin| %>
 				<% if (pim_admin.id % 2) == 1 %>
 					<tr class="pim_admin_index_adminrow" onclick="goTo('<%= url_for(pim_admin) %>')">
-						<td><%= pim_admin.username %></td>
-						<td><%= pim_admin.email %></td>
-						<td><%= pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></td>
-					</tr>
 				<% else %>
 					<tr class="pim_admin_index_adminrow_alt" onclick="goTo('<%= url_for(pim_admin) %>')">
+				<% end %>
 						<td><%= pim_admin.username %></td>
 						<td><%= pim_admin.email %></td>
 						<td><%= pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></td>
+						<td><%= link_to 'Edit', edit_pim_admin_path(pim_admin) %> <%= button_to "Delete", pim_admin, :method => :delete, :class => :destroy %></td>
 					</tr>
-				<% end %>
 		    <% end %>
 		
 		</table>

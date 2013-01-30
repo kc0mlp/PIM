@@ -8,8 +8,6 @@
       Handels the view for the user admin list, this will be restricted to admins later
  -->	
 	
-	<div id="notice"><%= notice %></div>
-	
 	<div id="pim_admins_wrapper">
 		
 		<table id="pim_admin_index_table">
@@ -35,10 +33,12 @@
 						<td><%= pim_admin.username %></td>
 						<td><%= pim_admin.email %></td>
 						<td><%= pim_admin.created_at.strftime(APP_CONFIG.config['date_time_format']) %></td>
-						<td><%= link_to 'Edit', edit_pim_admin_path(pim_admin) %> <%= button_to "Delete", pim_admin, :method => :delete, :class => :destroy %></td>
+						<% confirmString = "#{LANGUAGE.lang['sure-you-want-to-delete']} #{pim_admin.username}" %>
+						<td><%= link_to 'Edit', edit_pim_admin_path(pim_admin) %> <%= button_to "Delete", pim_admin, :method => :delete, :confirm => confirmString, :class => :destroy %></td>
 					</tr>
 		    <% end %>
 		
 		</table>
+		<%= link_to 'New PIM Admin', new_pim_admin_path %>
 
 	</div>

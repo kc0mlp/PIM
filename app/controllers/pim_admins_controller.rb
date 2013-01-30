@@ -38,22 +38,22 @@ class PimAdminsController < ApplicationController
   end
 
   def create
-    @pim_admin = PimAdmin.new(params[:post])
+    @pim_admin = PimAdmin.new(params[:pim_admin])
     
     if @pim_admin.save
       flash[:notice] = LANGUAGE.lang['new-pim-admin-success']
     end
-    
-    respond_with(@pim_admin)
+    render :show
   end
   
   def update
-    @pim_admin = PimAdmin.find(params[:post])
+    @pim_admin = PimAdmin.find(params[:id])
     
-    if @pim_admin.update_attributes(params[:post])
+    if @pim_admin.update_attributes(params[:pim_admin])
       flash[:notice] = LANGUAGE.lang['edit-pim-admin-success']
     end
-    respond_with(@pim_admin)
+    
+    render :show
   end
 
   def destroy
@@ -63,7 +63,8 @@ class PimAdminsController < ApplicationController
     if @pim_admin == nil
       flash[:notice] = LANGUAGE.lang['destroy-pim-admin-success']
     end
-      
-    respond_with(@pim_admin)
+    
+    @pim_admins = PimAdmin.all  
+    render :index
   end
 end

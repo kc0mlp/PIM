@@ -7,7 +7,13 @@
       
       Handels the view for the pim_admin individual, this will be restricted to admins later.
  -->
-Will eventually display individual admin info.
+
+<div id="pim_admin_show">
+	<div id="pim_admin_show_username"><%= @pim_admin.username %></div>
+	<div class="pim_admin_show_detail"><%= LANGUAGE.lang["first-name"] + ": " + @pim_admin.first %></div>
+	<div class="pim_admin_show_detail"><%= LANGUAGE.lang["last-name"] + ": " + @pim_admin.last %></div>
+	<div class="pim_admin_show_detail"><%= LANGUAGE.lang["email-address"] + ": " + @pim_admin.email %></div>
+</div>
 
 <%= link_to 'Edit', edit_pim_admin_path(@pim_admin) %> |
 <%= link_to 'Back', pim_admins_path %>

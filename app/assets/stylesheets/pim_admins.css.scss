@@ -54,22 +54,38 @@ div.subtitle {
 }
 
 div.footer {
-  padding-top:10px;
-  text-align:center;
-  font-weight:600;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 600;
 }
 
-/* Individual admin formatting */
-div.pim_admin {
-	margin-top:25px;
-	margin-bottom:5px;
-	margin-left:5px;
-	margin-right:5px;
+/* PIM Admin Show Formatting */
+div#pim_admin_show {
+	margin-top: 25px;
+	margin-bottom: 5px;
+	margin-left: 50px;
+	margin-right: 50px;
 	
-	border-bottom:solid;
-	border-bottom-width:2px;
+	padding: 5px;
 }
 
+div#pim_admin_show_username {
+	margin-left: auto;
+	margin-right: auto;
+	
+	font-size: 24pt;
+	text-align: center;
+}
+
+div.pim_admin_show_detail {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 16pt;
+}
+
+/* PIM Admin Index Formatting */
 table#pim_admin_index_table {
 	width:100%;
 }

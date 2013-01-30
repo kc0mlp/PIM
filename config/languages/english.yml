@@ -32,6 +32,9 @@ actions: "Actions"
 #Error Messages
 sorry-no-posts: "Sorry, there are no posts yet!"
 
+#Confirmation Messages
+sure-you-want-to-delete: "Are you sure you want to delete"
+
 #Posts
 last-updated: "Last Updated"
 created: "Created"

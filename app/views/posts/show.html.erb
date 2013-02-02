@@ -11,7 +11,13 @@
 <div class="post">
 	<div class="post_title"><%= @post.title %></div>
 	<div class="post_header">
-		<%= LANGUAGE.lang['author'] %>: <span class="post_name"><%= link_to @post.pimAdmin.username, @post.pimAdmin %></span>
+		<%= LANGUAGE.lang['author'] %>: <span class="post_name">
+			<% if @post.pimAdmin %>
+				<%= link_to @post.pimAdmin.username, @post.pimAdmin %>
+			<% else %>
+				<%= LANGUAGE.lang['admin-deleted'] %>
+			<% end %>
+		</span>
 	</div>
 	<div class="post_content"><%= @post.content %></div>
 	<div class="post_footer">

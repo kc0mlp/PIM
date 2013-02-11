@@ -44,6 +44,19 @@ by: "By"
 author: "Author"
 admin-deleted: "Admin Deleted"
 
+#Emails
+activation_email_header: "Welcome to the Player Inventory Management System (PIM)!"
+activation_email_message: "You have successfully registered and your username is:"
+activation_email_instructions: "Please activate your account by using this link to login for the first time:"
+activation_email_thankyou: "Thank you for joining PIM."
+
+activation_success_email_header: "PIM Account Activation Successful!"
+activation_success_email_message: "You have successfully activated and your username is:"
+activation_success_email_instructions: "Please login using this url:"
+
+password_reset_email_header: "PIM Account Password Reset"
+password_reset_email_message: "To reset your password, simply follow this link:"
+
 #PIM Admins
 sorry-no-admins: "Sorry, there are no PIM admins."
 first-name: "First Name"

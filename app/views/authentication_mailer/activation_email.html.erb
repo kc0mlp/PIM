@@ -1,0 +1,27 @@
+<%  
+  #    activation_email.html.erb
+  #    PIM
+  #    
+  #    Created by Kael Hankins on 2013-02-10.
+  #    Copyright 2013 Kael Hankins. All rights reserved.
+  #
+  #	  This is the html template for the activation email
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <h1><%= LANGUAGE.lang['activation_email_header'] %></h1>
+    <p>
+      <%= LANGUAGE.lang['activation_email_message'] %> <%= @user.username %>.<br/>
+    </p>
+    <p>
+      <%= LANGUAGE.lang['activation_email_instructions'] %> <%= @url %>.
+    </p>
+    <p><%= LANGUAGE.lang['activation_email_thankyou'] %></p>
+  </body>
+</html>

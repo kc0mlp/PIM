@@ -8,6 +8,8 @@
 #  This file holds various configuration settings for PIM sorted by operation mode.
 #  Defaults will be loaded with each environment set
 #  The server must be restarted to show changes to this file as it is only read on startup.
+#
+#  Settings for email delivery may be found in config/environments/RAILS_ENV
 
 defaults: &defaults
   site_title: "The Best Site Evar"
@@ -15,10 +17,14 @@ defaults: &defaults
   global_footer: "Copyright Kael Hankins 2013 All Rights Reserved. This RAILS Project is a work in progress."
   timezone: "Central Time (US & Canada)"
   date_time_format: "%a, %b. %d, %Y  %I:%M %p"
+  activation_email_subject: "Your PIM account requires activation."
+  activation_success_email_subject: "Your PIM account has been activated!."
+  password_reset_email_subject: "PIM account password reset request."
 
-development:
-   <<: *defaults
-
+development: 
+  <<: *defaults
+  base_url: "dev" #http://{base_url}/more/stuff/here
+  authentication_email_address: "dev@iowalanleague.com"
 
 test:
    <<: *defaults

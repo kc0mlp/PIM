@@ -1,0 +1,43 @@
+<%
+	# 
+    #  _form.html.erb
+    #  PIM
+    #  
+    #  Created by Kael Hankins on 2013-02-13.
+    #  Copyright 2013 Kael Hankins. All rights reserved.
+	#
+	#  This file renders the form for adding and editing users. 
+ %>
+<%= form_for(@user) do |f| %>
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@user.errors.count, LANGUAGE.lang['error']) %> <%= LANGUAGE.lang['prevented_from_save']%></h2>
+			
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>	
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label :username %><br />
+		<%= f.text_field :username %>
+	</div>
+	<div class="field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class="field">
+		<%= f.label :password %><br />
+		<%= f.password_field :password %>
+	</div>
+	<div class="field">
+		<%= f.label :password_confirmation %><br />
+		<%= f.password_field :password_confirmation %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

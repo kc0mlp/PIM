@@ -28,6 +28,7 @@ home: "Home"
 blog: "Blog"
 manage-admins: "Manage Admins"
 actions: "Actions"
+back: "Back"
 
 #Error Messages
 sorry-no-posts: "Sorry, there are no posts yet!"
@@ -44,7 +45,7 @@ by: "By"
 author: "Author"
 admin-deleted: "Admin Deleted"
 
-#Emails
+#Registration
 activation_email_header: "Welcome to the Player Inventory Management System (PIM)!"
 activation_email_message: "You have successfully registered and your username is:"
 activation_email_instructions: "Please activate your account by using this link to login for the first time:"
@@ -56,6 +57,12 @@ activation_success_email_instructions: "Please login using this url:"
 
 password_reset_email_header: "PIM Account Password Reset"
 password_reset_email_message: "To reset your password, simply follow this link:"
+
+user_registration_success_notice: "Your registration was successful. Please check your email (including SPAM folder!) for activation instructions."
+user_edit_success_notice: "The user was edited successfully."
+user_activation_success_notice: "User activated sucessfully."
+prevented_from_save: "prevented this user from being saved:"
+error: "error"
 
 #PIM Admins
 sorry-no-admins: "Sorry, there are no PIM admins."

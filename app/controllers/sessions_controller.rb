@@ -12,8 +12,6 @@ class SessionsController < ApplicationController
     #Nothing here since validation is now properly handled by the model.
   end
   
-  end
-  
   def create
     user = login(params[:username], params[:password], params[:remember_me])
     if user
